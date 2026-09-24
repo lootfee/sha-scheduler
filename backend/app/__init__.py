@@ -30,8 +30,8 @@ def create_app(env=None):
     # (not "*") for credentialed requests to work.
     app.config.update(
         SESSION_COOKIE_HTTPONLY=True,
-        SESSION_COOKIE_SAMESITE="Lax" if app.config["DEBUG"] else "None",
-        SESSION_COOKIE_SECURE=not app.config["DEBUG"],
+        SESSION_COOKIE_SAMESITE="Lax",# if app.config["DEBUG"] else "None",
+        SESSION_COOKIE_SECURE=False,#not app.config["DEBUG"],
     )
 
     db.init_app(app)
